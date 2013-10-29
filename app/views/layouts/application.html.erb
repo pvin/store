@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Store</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
 
-<%= yield %>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Some Store</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Browse Products", products_path %></li>
+          <li><%= link_to "Price List" %></li>
+          <li><%= link_to "Contact Us" %></li>
+          <li><%= link_to "Cart" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+        <div class="span3">
+            <h2>About Us</h2>
+
+            <p>To get the most flexibility from Twitter Bootstrap it’s best to use it with a dynamic language, such as
+              LESS,
+              instead of using the static compiled files which it outputs. To get LESS working with Rails we’ll need the
+              help of some Ruby gems. There are several gems available for integrating Bootstrap with Rails. In this
+              episode
+              we’ll be using the twitter-bootstrap-rails gem but we’ll mention some of the alternatives later. We’ve
+              chosen
+              this gem as it works directly with LESS and offers some nice generators to help us get started. We’re
+              getting
+              a little ahead of ourselves here, though as we don’t even have a Rails application to work with yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
